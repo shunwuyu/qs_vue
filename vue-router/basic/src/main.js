@@ -1,40 +1,30 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Post from './Post.vue'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
-const Home = { template: '<div>home</div>' };
-const Foo = { template: '<div>foo</div>' };
-const Bar = { template: '<div>bar</div>' };
-
-// mode 与否   history,  一个是hastag
+const Home = { template: '<div>home</div>' }
 
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes: [
     { path: '/', component: Home },
-    { path: '/foo', component: Foo },
-    { path: '/bar', component: Bar }
+    { path: '/post/:id', component: Post }
   ]
 });
-
-// router-link 语法  tag li  定制生成标签 
-// :event 触发事件
-// router-view
 
 new Vue({
   router,
   template: `
     <div id="app">
-      <h1>Basic</h1>
+      <h1>Data Fetching</h1>
       <ul>
         <li><router-link to="/">/</router-link></li>
-        <li><router-link to="/foo">/foo</router-link></li>
-        <li><router-link to="/bar">/bar</router-link></li>
-        <router-link tag="li" to="/bar" :event="['mousedown', 'touchstart']">
-          <a>/bar</a>
-        </router-link>
+        <li><router-link to="/post/1">/post/1</router-link></li>
+        <li><router-link to="/post/2">/post/2</router-link></li>
+        <li><router-link to="/post/3">/post/3</router-link></li>
       </ul>
       <router-view class="view"></router-view>
     </div>
