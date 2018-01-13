@@ -1,40 +1,40 @@
 <template>
   <div id="app">
-    <el-rate 
-    v-model="value1"
-    @change="onRateChange"></el-rate>
-    <el-rate 
-    disabled
-    v-model="value2"></el-rate>
-    <el-rate 
-    :colors="['#99A9BF', '#F7BA2A', '#FF9900']"
-    v-model="value3"></el-rate>
-    <el-rate 
-    showText
-    v-model="value4"></el-rate>
+    <el-badge class="item" :value="1" :max="9">
+      <el-button @click="addComment" size="medium">评论</el-button>
+    </el-badge>
+    <el-badge class="item" disabled  is-dot :value="1" :max="9">
+      <el-button type="primary">回复</el-button>
+    </el-badge>
+    <el-badge class="item" :value="num" :max="9">
+      <el-button loading icon="el-icon-edit" type="primay" native-type="submit">点我</el-button>
+    </el-badge>
   </div>
 </template>
 
 <script>
-import ElRate from '@/components/ElRate'
-
+import ElBadge from '@/components/ElBadge'
+import ElButton from '@/components/ElButton'
 export default {
   name: 'app',
   data () {
     return {
-      value1: null,
-      value2: null,
-      value3: null,
-      value4: 4
+      num: 6
     }
   },
   components: {
-    ElRate
+    ElBadge,
+    ElButton
   },
   methods: {
-    onRateChange (value) {
-      console.log('值选中了'+value)
+    addComment(evt) {
+      console.log('发表评论')
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.num = 8
+    }, 5000)
   }
 }
 </script>

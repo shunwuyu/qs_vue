@@ -18,3 +18,13 @@
   emit change 方法可以触发父ViewModel的onChildChange
 
   text  v-if   computed 根据value 来计算。 预设prop数组
+
+  作业：  换图标， 半颗星
+
+## badge组件
+
+  sup 变化  content v-text
+  isDot 只显示小点 不显示内容  is-dot 类
+  this.$slots.default是否有内容， fixed到右上角
+  max 最大值
+  slot 交给内容
