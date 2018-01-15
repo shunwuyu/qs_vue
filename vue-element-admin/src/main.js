@@ -9,6 +9,9 @@ import App from './App'
 import router from './router'
 import i18n from './lang'
 import store from './store'
+import './icons'
+import './mock'
+import './permission'
 
 Vue.use(Element, {
   size: 'medium',

@@ -13,3 +13,9 @@
 
 - i18n 国际化
   document.cookie='language=zh'
+
+- stylus mixin 复用一段代码，如函数 
+
+- aria-hidden 避免屏幕抓取
+
+- props type required true
